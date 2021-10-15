@@ -1,0 +1,13 @@
+{% extends 'first_app/base_new.html' %}
+
+{% block body_block %}
+
+<ul class="list-group">
+{% for musician in musician_list %}
+
+<li> <a href="{% url 'first_app:musician_details' pk=musician.pk %}">{{musician.first_name}} {{musician.last_name}} </a> </li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- {% load static % } -->
+{% extends "first_app/base.html" %}
+
+{% block body_block %}
+
+<!-- <h1>{{heading_1 }}</h1> -->
+    <button><a href="{% url 'first_app:index' %}">BACK</a></button>
+    <a href="/">Back</a>
+    <form action="" method="POST">
+        {{test_form.as_p}}
+                           <!-- as_p means show them as paragraph . niche line by line korar jnno -->
+        {% csrf_token %}
+        <input type="submit" name="test_field" value="Submit">
+    </form>
+
+{% endblock %}
+
+<!-- <html lang="en"> -->
+
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head> -->
+
+<!-- <body> -->
+<!-- <h1>This form is a HTML form</h1>
+    <form action="" method="post">
+        <label for="user_name">Full Name : </label>
+        <input type="text" name="user_name" value="" required>
+
+        <label for="user_email">Email : </label>
+        <input type="email" name="user_email" value="" required>
+
+        <input type="submit" name="test_field" value="Submit">
+    </form>
+
+    <hr> -->
+
+<!-- <h1>Data Section</h1> -->
+
+<!-- {% if form_submited %} -->
+<!-- <p>Name : {{user_name}}</p>
+    <p>Email :{{user_email}}</p>
+    <p>Date of Birth : {{user_dob}}</p>
+    <p>Agreement : {{boolean_field}}</p>
+    <p>Char test : {{char_field}}</p>
+    <p>Choice test :{{choice_field}}</p>
+    <p>Radio test : {{radio_field}}</p>
+    <p>multiple choice : {{multi_field}}</p> -->
+
+
+<!-- <p> Result: {{field}}</p> -->
+<!-- <p>validator : {{val_name}}</p> -->
+
+<!-- {% endif%} -->
+
+<!-- <hr> -->
+<!-- <h1>{{heading_1}}</h1>
+    <button><a href="{% url 'first_app:index' %}">BACK</a></button>
+    <a href="/">Back</a>
+    <form action="" method="POST">
+        {{test_form.as_p}}
+        as_p means show them as paragraph . niche line by line korar jnno
+        {% csrf_token %}
+        <input type="submit" name="test_field" value="Submit">
+    </form> -->
+
+
+
+<!-- 
+</body>
+
+</html> -->

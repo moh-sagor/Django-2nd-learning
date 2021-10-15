@@ -1,0 +1,33 @@
+{% extends 'first_app/base_new.html' %}
+
+{% block body_block %}
+
+<h3>Musician Details</h3>
+<br>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Instrument</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{musician.first_name}}</td>
+        <td>{{musician.last_name}}</td>
+        <td>{{musician.instrument}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Album</h3>
+   {% for album in musician.album_list.all %}
+
+   <li>{{album.name}}</li>
+   {% endfor %}
+<br>
+<a href="{% url 'first_app:musician_update' pk=musician.pk  %}" class='btn btn-warning'>Update</a>
+<a href="{% url 'first_app:delete_musician' pk=musician.pk  %}" class='btn btn-danger'>Delete</a>
+
+{% endblock %}

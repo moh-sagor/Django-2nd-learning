@@ -1,0 +1,38 @@
+{% extends "first_app/base.html" %}
+
+{% block body_block %}
+
+
+<h4>Artist Name : <b style=color:red>{{artist_info.first_name}} {{artist_info.last_name}}</b></h4>
+<h4>Instrument : <b style=color:green>{{artist_info.instrument}}</b></h4>
+<h4>Artist Rating : <b style="background-color: aqua; color: rgb(4, 0, 255)">{{artist_rating.star_num__avg}}</b></h4>
+
+<a href="{% url 'first_app:edit_artist' artist_id=artist_info.id %}" class="btn btn-lg btn-success">Edit </a>
+
+<hr>
+
+<h2>Album List</h2>
+
+<table class="table table-sm table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Album Name</th>
+        <th scope="col">Release Date</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    {% for album in album_list %}
+    <tbody>
+      <tr>
+        <td> <a href="{% url 'first_app:edit_album' album_id=album.id %}">{{ album.name }}</a></td>
+        <td>{{ album.release_date | date:"M d, Y" }}</td>
+        <td>{{ album.star_num }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+
+  
+<a href="{% url 'first_app:delete_artist' artist_id=artist_info.id %}" class='btn btn-danger btn-lg' onclick="return confirm('Are You Sure To Delete')" >Delete</a>
+
+{% endblock %}

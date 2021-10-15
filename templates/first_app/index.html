@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+{% extends "first_app/base.html" %}
+{% block body_block %}
+<h1>{{ text_1 }}</h1>
+
+
+<table class="table table-sm table-dark">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Instrument</th>
+      </tr>
+    </thead>
+    {% for row in musician %}
+    <tbody>
+      <tr>
+        <td>{{ row.first_name }}</td>
+        <td>{{ row.last_name }}</td>
+        <td>{{ row.instrument }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+
+<hr>
+
+<button><a href="{% url 'first_app:form' %}">Add New Form</a></button>
+
+{% endblock %}
+
+{% load static %}
+
+
+<!-- <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static " css/mystyle.css" %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musician List</title>
+</head>
+
+<body> -->
+    <!-- <h1>{{ text_1 }}</h1>
+    <button><a href="{% url 'first_app:form' %}">Add New Form</a></button>
+    <hr>
+    <table border="1">
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>instrument</th>
+
+        {% for row in musician %}
+        <tr>
+            <td>{{ row.first_name }}</td>
+            <td>{{ row.last_name }}</td>
+            <td>{{ row.instrument }}</td>
+        </tr>
+        {% endfor %}
+    </table> -->
+
+
+    <!-- <img src="{% static " images/image_1.jpg" %}" alt="Image Loading"> -->
+<!-- </body>
+
+</html> -->

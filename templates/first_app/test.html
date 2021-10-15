@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends "first_app/base.html" %}
+
+{% load my_custom_filters % }
+
+{% block body_block %}
+
+<h1>{{text_2 | upper}} </h1>
+
+{% endblock %}
+
